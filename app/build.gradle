@@ -33,21 +33,15 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
     implementation 'com.google.android.material:material:1.2.1'
 
-    implementation 'com.github.rahatarmanahmed:circularprogressview:2.5.0'
-    //API
-    implementation "tk.skeptick:vk-api-kotlin-client:0.2.4"
     //Retrofit2
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.4.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-
-    implementation "io.reactivex.rxjava3:rxjava:3.0.6"
-    implementation "io.ktor:ktor-client-cio:1.4.0"
+    implementation "tk.skeptick:vk-api-kotlin-client:0.2.4"
     //HTTP
     implementation("com.squareup.okhttp3:okhttp:4.9.0")
 
     implementation "com.tompee.kotlinbuilder:runtime:0.3.0"
-    kapt "com.tompee.kotlinbuilder:compiler:0.3.0"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

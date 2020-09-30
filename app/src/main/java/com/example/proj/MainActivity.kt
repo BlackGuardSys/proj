@@ -1,39 +1,23 @@
 package com.example.proj
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.telecom.Call
 import android.widget.Toast
-import io.ktor.http.cio.*
-import okhttp3.OkHttpClient
-import java.io.IOException
-import javax.security.auth.callback.Callback
+import androidx.appcompat.app.AppCompatActivity
+import retrofit2.Retrofit
+import retrofit2.converter.moshi.MoshiConverterFactory
+
 
 
 class MainActivity : AppCompatActivity()
 {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-
-        val client = OkHttpClient()
-        fun onCreate(savedInstanceState: Bundle?)
-        { super.onCreate(savedInstanceState)
+        val
+                retrofit: Retrofit = Retrofit.Builder () .baseUrl("https://api.example.com")
+            .addConverterFactory(MoshiConverterFactory.create())
+            .build ()
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_main)
-            run("https://github.com/trending")
-        }
-        fun run(url: String)
-        {
-            val request = Request .builder() .url(url) .build()
-            client.newCall(request).enqueue(object : Callback {
-                fun onFailure(call: Call, e: IOException) {}
-                fun onResponse(call: Call, response: Response) = println(response.body()?.string())
-            })
-        }
-
-
-
     }
 
     private fun toastMeState(message: String) {
@@ -54,6 +38,3 @@ class MainActivity : AppCompatActivity()
 
 }
 
-private fun Call.enqueue(responseCallback: Callback) {
-
-}
